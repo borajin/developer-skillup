@@ -40,42 +40,37 @@ let stack = [0]; //undo-redo stack
 let stackCursor = 0; //현재 위치
 
 function handleClick(event) {
-  if (checkInputValue()) {
-    switch (event.target.id) {
-      case "addButton":
-        plus(getInputValue());
-        break;
-      case "subButton":
-        minus(getInputValue());
-        break;
-      case "undoButton":
-        undo();
-        break;
-      case "redoButton":
-        redo();
-        break;
-      default:
-        break;
-    }
-
-    updateUi();
+  switch (event.target.id) {
+    case "addButton":
+      plus(getInputValue());
+      break;
+    case "subButton":
+      minus(getInputValue());
+      break;
+    case "undoButton":
+      undo();
+      break;
+    case "redoButton":
+      redo();
+      break;
+    default:
+      break;
   }
+
+  initInput();
+  updateUi();
 }
 
 //module
 function plus(value) {
-  if (count + value > MAX_COUNT) {
-    alert(MAX_COUNT + "보다 클 수 없습니다.");
-  } else {
+  if (checkInputValue("plus")) {
     count += value;
     stackAdd(count);
   }
 }
 
 function minus(value) {
-  if (count < getInputValue()) {
-    alert("0보다 작을 수 없습니다.");
-  } else {
+  if (checkInputValue("minus")) {
     count -= value;
     stackAdd(count);
   }
@@ -101,9 +96,16 @@ function redo() {
 }
 
 //ui
-function checkInputValue() {
-  if (isNaN(getInputValue())) {
-    alert("숫자를 입력해주세요.");
+function checkInputValue(type) {
+  console.log(type);
+  if (isNaN(getInputValue()) || getInputValue() <= 0) {
+    alert("1 이상의 숫자를 입력해주세요.");
+    return false;
+  } else if (type == "plus" && count + getInputValue() > MAX_COUNT) {
+    alert(MAX_COUNT + "보다 클 수 없습니다.");
+    return false;
+  } else if (type == "minus" && count < getInputValue()) {
+    alert("0보다 작을 수 없습니다.");
     return false;
   }
 
@@ -114,9 +116,12 @@ function getInputValue() {
   return Number(input.value);
 }
 
+function initInput() {
+  input.value = "";
+}
+
 function updateUi() {
   countTxt.innerText = count;
-
   if (count > 0) {
     undoButton.disabled = false;
   } else {
