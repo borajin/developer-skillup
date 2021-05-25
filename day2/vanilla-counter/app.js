@@ -24,9 +24,10 @@ function onload() {
 // -> 3 입력 후 + : " 결과값 6
 // -> undo 버튼 : 결과값 3
 // -> 4 입력 후 + : 결과값 7
-// -> redo 버튼 : 결과값 3
-// -> redo 버튼 : 결과값 1
-// -> redo 버튼 : 결과갑 0 -> redo 버튼 비활성화
+// -> undo 버튼 : 결과값 3 -> redo 버튼 활성화
+// -> undo 버튼 : 결과값 1
+// -> undo 버튼 : 결과갑 0 -> undo 버튼 비활성화
+// -> redo 버튼 : 결과갑 1 -> undo 버튼 활성화
 
 //============================
 
@@ -34,6 +35,13 @@ const countTxt = document.getElementById("valuebox");
 const input = document.getElementById("inputbox");
 
 const MAX_COUNT = 9999999;
+
+const CAMMAND = {
+  NONE: "none",
+  PLUS: "plus",
+  MINUS: "minus",
+};
+const { NONE, PLUS, MINUS } = CAMMAND;
 
 let count = 0; //result
 let stack = [0]; //undo-redo stack
@@ -63,14 +71,14 @@ function handleClick(event) {
 
 //module
 function plus(value) {
-  if (checkInputValue("plus")) {
+  if (checkInputValue(PLUS)) {
     count += value;
     stackAdd(count);
   }
 }
 
 function minus(value) {
-  if (checkInputValue("minus")) {
+  if (checkInputValue(MINUS)) {
     count -= value;
     stackAdd(count);
   }
@@ -101,10 +109,10 @@ function checkInputValue(type) {
   if (isNaN(getInputValue()) || getInputValue() <= 0) {
     alert("1 이상의 숫자를 입력해주세요.");
     return false;
-  } else if (type == "plus" && count + getInputValue() > MAX_COUNT) {
+  } else if (type == PLUS && count + getInputValue() > MAX_COUNT) {
     alert(MAX_COUNT + "보다 클 수 없습니다.");
     return false;
-  } else if (type == "minus" && count < getInputValue()) {
+  } else if (type == MINUS && count < getInputValue()) {
     alert("0보다 작을 수 없습니다.");
     return false;
   }

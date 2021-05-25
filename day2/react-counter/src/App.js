@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 let stack = [0]; //undo-redo stack
 let stackCursor = 0; //현재 위치
@@ -10,10 +10,18 @@ function App() {
   const [undoFlag, setUndoFlag] = useState(true);
   const [redoFlag, setRedoFlag] = useState(true);
 
+  const inputFocus = useRef(); //특정 DOM 가리킬 때 사용. focus 하거나 색상을 변경하거나 등등.
+
   const MAX_COUNT = 9999999;
+  const CAMMAND = {
+    NONE: "none",
+    PLUS: "plus",
+    MINUS: "minus",
+  };
+  const { NONE, PLUS, MINUS } = CAMMAND;
 
   const handleInput = (e) => {
-    checkInputValue("none", Number(e.target.value));
+    checkInputValue(NONE, Number(e.target.value));
   };
 
   const handleClick = (e) => {
@@ -36,20 +44,21 @@ function App() {
   };
 
   useEffect(() => {
+    inputFocus.current.focus();
     initInput();
     updateUi();
   }, [count]);
 
   //module
   const plus = (value) => {
-    if (checkInputValue("plus")) {
+    if (checkInputValue(PLUS)) {
       stackAdd(count + value);
       setCount(count + value);
     }
   };
 
   const minus = (value) => {
-    if (checkInputValue("minus")) {
+    if (checkInputValue(MINUS)) {
       stackAdd(count - value);
       setCount(count - value);
     }
@@ -77,14 +86,14 @@ function App() {
 
   //ui
   const checkInputValue = (type, value) => {
-    if (type == "none" && (isNaN(value) || value <= 0)) {
+    if (type == NONE && (isNaN(value) || value <= 0)) {
       alert("1 이상의 숫자를 입력해주세요.");
       initInput();
       return false;
-    } else if (type == "plus" && count + value > MAX_COUNT) {
+    } else if (type == PLUS && count + value > MAX_COUNT) {
       alert(MAX_COUNT + "보다 클 수 없습니다.");
       return false;
-    } else if (type == "minus" && count < value) {
+    } else if (type == MINUS && count < value) {
       alert("0보다 작을 수 없습니다.");
       return false;
     }
@@ -120,7 +129,8 @@ function App() {
         id="inputbox"
         className="input"
         onChange={handleInput}
-        value={input || ""}
+        ref={inputFocus}
+        value={input || ""} //value에 state 설정 시 오류 해결
       />
       <div className="btnGroup">
         <button
