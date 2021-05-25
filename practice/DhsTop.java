@@ -16,12 +16,12 @@ public class DhsTop
 		Scanner sc = new Scanner(System.in);
 
 		do {
+			System.out.println("1 ~ 1000까지의 숫자를 입력해주세요.");
 			numrows = sc.nextInt();
 		} while(numrows<1 || numrows > MAX_LENGHT);
 		
 
 		int[][] dhsTop = createDhsTop(4);
- 
 		printDhsTop(dhsTop);
 	}
  
@@ -32,14 +32,8 @@ public class DhsTop
 			int[] rows = new int[i+1];
  
 			for(int j = 0; j<i+1; j++) {
-				if(j==0) {
-					rows[j] = 1;
-				} else if(j==i) {
-					rows[j] = 1;
-				} else {
-					int value = dhsTop[i-1][j-1] + dhsTop[i-1][j];
-					rows[j] = value;
-				}
+				if(j==0 || j==i) rows[j] = 1;
+				else rows[j] = dhsTop[i-1][j-1] + dhsTop[i-1][j];
 			}
  
 			dhsTop[i] = rows;
