@@ -22,19 +22,15 @@ function App() {
   };
 
   const searchContact = (type, searchKeyword) => {
-    let result = "";
-
     if (type === "name") {
-      result = PhoneData.filter((data) => {
+      return PhoneData.filter((data) => {
         if (data.name.indexOf(searchKeyword) > -1) return data;
       });
     } else if (type === "id") {
-      result = PhoneData.find((data) => {
+      return PhoneData.find((data) => {
         if (data.id === Number(searchKeyword)) return true;
       });
     }
-
-    return result;
   };
 
   return (
