@@ -29,7 +29,7 @@ function App() {
         if (data.name.indexOf(searchKeyword) > -1) return data;
       });
     } else if (type === "id") {
-      result = PhoneData.filter((data) => data.id == searchKeyword)[0];
+      result = PhoneData.filter((data) => data.id === searchKeyword)[0];
     }
 
     return result;
