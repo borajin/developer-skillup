@@ -10,6 +10,7 @@ function Details({ selectedData }) {
             <Profile
               profileImg={selectedData.img}
               profileName={selectedData.name}
+              isDetail={true}
             />
           </li>
           <li>생일 : {selectedData.birth}</li>
