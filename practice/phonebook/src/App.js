@@ -25,10 +25,10 @@ function App() {
     if (type === "name") {
       return PhoneData.filter((data) => {
         if (data.name.indexOf(searchKeyword) > -1) {
-          return data;
+          return true;
         }
 
-        return;
+        return false;
       });
     } else if (type === "id") {
       return PhoneData.find((data) => {
