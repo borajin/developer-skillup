@@ -29,7 +29,9 @@ function App() {
         if (data.name.indexOf(searchKeyword) > -1) return data;
       });
     } else if (type === "id") {
-      result = PhoneData.filter((data) => data.id === Number(searchKeyword))[0];
+      result = PhoneData.find((data) => {
+        if (data.id === Number(searchKeyword)) return true;
+      });
     }
 
     return result;
