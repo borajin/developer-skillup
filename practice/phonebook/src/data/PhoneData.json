@@ -1,0 +1,25 @@
+{
+    "PhoneData" : [
+        {
+            "id": 1,
+            "name": "김더존",
+            "img": "http://placeimg.com/100/100/any",
+            "birth": "1999-99-99",
+            "etc": "김씨입니다."
+        },
+        {
+            "id": 2,
+            "name": "이더존",
+            "img": "http://placeimg.com/100/100/any",
+            "birth": "1888-88-88",
+            "etc": "이씨입니다."
+        },
+        {
+            "id": 3,
+            "name": "오더존",
+            "img": "http://placeimg.com/100/100/any",
+            "birth": "17777-77-77",
+            "etc": "오씨입니다."
+        }
+    ]
+}
