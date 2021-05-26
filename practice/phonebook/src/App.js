@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { PhoneData } from "./data/PhoneData.json";
 import SearchBox from "./components/SerachBox";
@@ -24,11 +24,11 @@ function App() {
   const searchContact = (type, searchKeyword) => {
     let result = "";
 
-    if (type == "name") {
+    if (type === "name") {
       result = PhoneData.filter((data) => {
         if (data.name.indexOf(searchKeyword) > -1) return data;
       });
-    } else if (type == "id") {
+    } else if (type === "id") {
       result = PhoneData.filter((data) => data.id == searchKeyword)[0];
     }
 
