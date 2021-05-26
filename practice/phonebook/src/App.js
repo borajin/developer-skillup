@@ -24,11 +24,19 @@ function App() {
   const searchContact = (type, searchKeyword) => {
     if (type === "name") {
       return PhoneData.filter((data) => {
-        if (data.name.indexOf(searchKeyword) > -1) return data;
+        if (data.name.indexOf(searchKeyword) > -1) {
+          return data;
+        }
+
+        return;
       });
     } else if (type === "id") {
       return PhoneData.find((data) => {
-        if (data.id === Number(searchKeyword)) return true;
+        if (data.id === Number(searchKeyword)) {
+          return true;
+        }
+
+        return false;
       });
     }
   };
