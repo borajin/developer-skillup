@@ -1,6 +1,6 @@
 netlify 호스팅~
 
-https://adoring-mcnulty-b4580a.netlify.app/
+https://bora-phonebook-react.netlify.app/
 
 
 1. github 와 연결
