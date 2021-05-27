@@ -8,7 +8,7 @@ import Details from "./components/Details";
 function App() {
   return (
     <div className="container">
-      <h1 className="subject">진보라의 연락처</h1>
+      <h1 className="subject">진보라의 연락처 - recoil</h1>
       <div className="contact-wrap">
         <div className="col left">
           <SearchBox />
