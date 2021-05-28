@@ -7,20 +7,6 @@ function ContactList() {
   const search = useRecoilValue(searchState);
   const setSelectedData = useSetRecoilState(selectedDataState);
 
-  const onContactClick = (id) => {
-    setSelectedData(searchContact(id));
-  };
-
-  const searchContact = (id) => {
-    return search.allData.find((data) => {
-      if (data.id === Number(id)) {
-        return true;
-      }
-
-      return false;
-    });
-  };
-
   return (
     <div className="contact-list">
       <ul>
@@ -29,7 +15,7 @@ function ContactList() {
             <button
               type="button"
               onClick={() => {
-                onContactClick(data.id);
+                setSelectedData(data);
               }}
             >
               <Profile
