@@ -10,7 +10,7 @@ function ContactList({ phoneData, onContactClick }) {
             <button
               type="button"
               onClick={() => {
-                onContactClick(data.id);
+                onContactClick(data);
               }}
             >
               <Profile

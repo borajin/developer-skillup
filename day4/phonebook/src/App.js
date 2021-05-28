@@ -13,32 +13,17 @@ function App() {
     const input = e.target.value;
 
     setSelectedData();
-    setSearch({ input, data: searchContact("name", input) });
+    setSearch({ input, data: searchContact(input) });
   };
 
-  const onContactClick = (id) => {
-    console.log(searchContact("id", id));
-    setSelectedData(searchContact("id", id));
-  };
+  const searchContact = (searchKeyword) => {
+    return PhoneData.filter((data) => {
+      if (data.name.indexOf(searchKeyword) > -1) {
+        return true;
+      }
 
-  const searchContact = (type, searchKeyword) => {
-    if (type === "name") {
-      return PhoneData.filter((data) => {
-        if (data.name.indexOf(searchKeyword) > -1) {
-          return true;
-        }
-
-        return false;
-      });
-    } else if (type === "id") {
-      return PhoneData.find((data) => {
-        if (data.id === Number(searchKeyword)) {
-          return true;
-        }
-
-        return false;
-      });
-    }
+      return false;
+    });
   };
 
   return (
@@ -49,7 +34,7 @@ function App() {
           <SearchBox value={search.input} onInputChange={onInputChange} />
           <ContactList
             phoneData={search.data}
-            onContactClick={onContactClick}
+            onContactClick={setSelectedData}
           />
         </div>
         <div className="col right">
