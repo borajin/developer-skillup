@@ -1,0 +1,23 @@
+  그리드 설치 : yarn add realgrid
+  라이선스 등록 : <script type="text/javascript" src="https://static.wehago.com/realgrid2/realgrid-lic.js"></script>
+  도메인 연결 : 터미널에서 sudo vi /private/etc/hosts -> ::1 밑에 127.0.0.1		www.lululala.co.kr  추가
+
+  css(head)
+    <link rel="stylesheet" href="https://static.wehago.com/realgrid2/realgrid-style.css">
+
+  도메인 localhost 쓰고싶을 때(head)
+    <script>
+      var realGrid2Lic = 'upVcPE+wPOmtLjqyBIh9RkM/nBOseBrflwxYpzGZyYm9cY8amGDkiMnVeQKUHJDjW2y71jtk+wteqHQ1mRMIXzEcGIrzZpzzNTakk0yR9UcO/hzNodVsIiqQNVtxmmYt';
+      </script>
+
+  <그리드 개념>
+  - GridView : 눈에 보이는 부분 담당하는 객체
+  - DataProvider : 그리드의 데이터 관리 객체
+  - DataField : 데이터 저장하는 논리적인 장소 담당 객체
+  - DataColumn : 그리드 내 셀들 관리
+
+  중요: gird 는 높이를 수동으로 잡아줘야함!!
+
+  fields : header 에 대한 명세
+  columns : 컬럼 안에 들어가는 내용에 대한 명세
+  rows : 실제 데이터들

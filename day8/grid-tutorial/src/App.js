@@ -9,6 +9,18 @@ function App() {
   라이선스 등록 : <script type="text/javascript" src="https://static.wehago.com/realgrid2/realgrid-lic.js"></script>
   도메인 연결 : 터미널에서 sudo vi /private/etc/hosts -> ::1 밑에 127.0.0.1		www.lululala.co.kr  추가
 
+
+    <link rel="stylesheet" href="https://static.wehago.com/realgrid2/realgrid-style.css">
+    <script>
+      var realGrid2Lic = 'upVcPE+wPOmtLjqyBIh9RkM/nBOseBrflwxYpzGZyYm9cY8amGDkiMnVeQKUHJDjW2y71jtk+wteqHQ1mRMIXzEcGIrzZpzzNTakk0yR9UcO/hzNodVsIiqQNVtxmmYt';
+      </script>
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script type="text/javascript" src="https://static.wehago.com/realgrid2/realgrid-lic.js"></script>
+    
+
   <그리드 개념>
   - GridView : 눈에 보이는 부분 담당하는 객체
   - DataProvider : 그리드의 데이터 관리 객체
@@ -36,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <h2>RealGrid2 React Tutorial</h2>
-      <div id="realgrid" style={{ height: 500, width: "auto" }}></div>;
+      <div id="realgrid" style={{ height: 500, width: "auto" }}></div>
     </div>
   );
 }
