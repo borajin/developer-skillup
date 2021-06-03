@@ -1,0 +1,30 @@
+앞으로 공부해야할 것들
+
+[typescript]
+런타임 시 오류를 잡아줘서 너무 좋다~
+변수타입, 함수리턴값타입, 함수인자타입, 컴포넌트타입 등등
+props 타입 지정 시 type 보다는 Interface 사용 권장
+ㅁㄴㅇㄹ:type > ㅁㄴㅇㄹ?:type 이렇게하면 옵션이 됨. 필수로 안넣어도 된다~
+
+[prettier]
+코드 정리해줌~
+
+[NestJS]
+백엔드.
+spring 같은 애
+얘부터 먼저 공부하기
+
+[TypeORM]
+백엔드.
+db 변경해도 호환됨
+살짝 훑어만보기
+
+[DB]
+bg??? ???
+
+=========
+
+typesciprt 로 시작하려면
+npx create-react-app my-app --template typescript
+
+counter 앱, 연락처 앱에 ts 적용해보기

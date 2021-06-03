@@ -5,21 +5,20 @@ import "./App.css";
 
 function App() {
   /*
+
+  js to ts > npx 실행
+
   그리드 설치 : yarn add realgrid
   라이선스 등록 : <script type="text/javascript" src="https://static.wehago.com/realgrid2/realgrid-lic.js"></script>
   도메인 연결 : 터미널에서 sudo vi /private/etc/hosts -> ::1 밑에 127.0.0.1		www.lululala.co.kr  추가
 
-
+  css(head)
     <link rel="stylesheet" href="https://static.wehago.com/realgrid2/realgrid-style.css">
+
+  도메인 localhost 쓰고싶을 때(head)
     <script>
       var realGrid2Lic = 'upVcPE+wPOmtLjqyBIh9RkM/nBOseBrflwxYpzGZyYm9cY8amGDkiMnVeQKUHJDjW2y71jtk+wteqHQ1mRMIXzEcGIrzZpzzNTakk0yR9UcO/hzNodVsIiqQNVtxmmYt';
       </script>
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script type="text/javascript" src="https://static.wehago.com/realgrid2/realgrid-lic.js"></script>
-    
 
   <그리드 개념>
   - GridView : 눈에 보이는 부분 담당하는 객체
@@ -49,6 +48,9 @@ function App() {
     <div className="App">
       <h2>RealGrid2 React Tutorial</h2>
       <div id="realgrid" style={{ height: 500, width: "auto" }}></div>
+      {[].map(() => (
+        <div>asf</div>
+      ))}
     </div>
   );
 }
