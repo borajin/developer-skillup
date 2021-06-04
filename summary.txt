@@ -1,3 +1,53 @@
+앞으로 공부해야할 것들
+
+[typescript]
+런타임 시 오류를 잡아줘서 너무 좋다~
+변수타입, 함수리턴값타입, 함수인자타입, 컴포넌트타입 등등
+props 타입 지정 시 type 보다는 Interface 사용 권장
+ㅁㄴㅇㄹ:type > ㅁㄴㅇㄹ?:type 이렇게하면 옵션이 됨. 필수로 안넣어도 된다~
+
+[prettier]
+코드 정리해줌~
+
+[NestJS]
+백엔드.
+spring 같은 애
+얘부터 먼저 공부하기
+
+[TypeORM]
+백엔드.
+db 변경해도 호환됨
+살짝 훑어만보기
+
+[DB]
+bg??? ???
+
+=========
+
+typesciprt 로 시작하려면
+npx create-react-app my-app --template typescript
+
+counter 앱, 연락처 앱에 ts 적용해보기
+
+
+=======
+
+recoil 로 관리되는 state 는 memo 로 관리 안해줘도 알아서 챱챱 어쩌고 된다.
+
+interface 의 name 은 앞에 I 를 붙이기
+types 폴더로 interface 만들어 관리
+컴포넌트 반환값은 굳이 명시 안해도 ㄱㅊ
+
+set 을 두 번 호출해도 ㄱㅊ왜냐면 비동기로 실행되기 때문(아마도~)
+그래고 각자 컴포넌트를 업데이트 하므로 신경 크게 안써도 됨
+
+한 컴포넌트 안에서 쓰는 state 는 굳이 Recoil 로 x
+useState 사용
+
+set, reset function 타입도 지정해주기(매개변수 타입...)
+
+==================
+
 클라이언트 사이드 랜더링(React)
 1. html 파일을 다운받는다
 2. 빈화면! [사용자가 보는 시점]
