@@ -70,9 +70,14 @@ let PhoneData: IPhoneData[] = [
   }
 ];
 
+let id = 9;
+
 const createId = () => {
   if (PhoneData.length < 1) return 1;
-  else return PhoneData[PhoneData.length - 1].id + 1;
+  else {
+    id = id + 1;
+    return id;
+  }
 };
 
 export const addPhoneData = (name: string, birth: string, etc: string) => {
@@ -92,4 +97,27 @@ export const removePhoneData = (id: number) => {
   PhoneData = PhoneData.filter(data => {
     return data.id !== id;
   });
+};
+
+export const editPhoneData = (
+  id: number,
+  name: string,
+  birth: string,
+  etc: string
+) => {
+  removePhoneData(id);
+  PhoneData = [
+    ...PhoneData,
+    {
+      id: id,
+      name,
+      img: "http://placeimg.com/100/100/any",
+      birth,
+      etc
+    }
+  ];
+};
+
+export const findPhoneData = (id: number) => {
+  return PhoneData.find(data => data.id == id);
 };

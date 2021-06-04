@@ -14,7 +14,9 @@ export const searchInputState = atom<string>({
 
 export const searchListState = atom<IPhoneData[]>({
   key: "searchListState",
-  default: getAllData()
+  default: getAllData().sort((a: IPhoneData, b: IPhoneData) => {
+    return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+  })
 });
 
 export const filteredListState = selector({
@@ -23,11 +25,15 @@ export const filteredListState = selector({
     const searchInput = get(searchInputState);
     const searchList = get(searchListState);
 
-    return searchList.filter(data => data.name.includes(searchInput));
+    return searchList
+      .filter(data => data.name.includes(searchInput))
+      .sort((a: IPhoneData, b: IPhoneData) => {
+        return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+      });
   }
 });
 
-export const addTapState = atom<boolean>({
-  key: "addTapState",
-  default: false
+export const tapState = atom<"details" | "add" | "edit">({
+  key: "tapState",
+  default: "details"
 });

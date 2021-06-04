@@ -1,7 +1,7 @@
 import React from "react";
 import Profile from "./Profile";
 import { useSetRecoilState } from "recoil";
-import { addTapState, selectedDataState } from "../store/atom";
+import { tapState, selectedDataState } from "../store/atom";
 import { IPhoneData } from "../types/type";
 
 interface DataProps {
@@ -11,14 +11,14 @@ interface DataProps {
 const Data = ({ data }: DataProps) => {
   const setSelectedData =
     useSetRecoilState<IPhoneData | null>(selectedDataState);
-  const setAddTap = useSetRecoilState(addTapState);
+  const setAddTap = useSetRecoilState(tapState);
 
   return (
     <button
       type="button"
       onClick={() => {
-        setAddTap(false);
         setSelectedData(data);
+        setAddTap("details");
       }}
     >
       <Profile profileImg={data.img} profileName={data.name} isDetail={false} />

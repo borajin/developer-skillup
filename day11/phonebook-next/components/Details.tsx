@@ -1,6 +1,7 @@
 import React from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import {
+  tapState,
   searchInputState,
   searchListState,
   selectedDataState
@@ -15,6 +16,7 @@ const Details = () => {
   const setSearchInput = useSetRecoilState(searchInputState);
   const setSearchList = useSetRecoilState(searchListState);
   const setSelectedData = useSetRecoilState(selectedDataState);
+  const setTap = useSetRecoilState(tapState);
 
   return (
     <div className="details">
@@ -42,6 +44,14 @@ const Details = () => {
             }}
           >
             삭제
+          </button>
+          <button
+            className="remove-btn"
+            onClick={() => {
+              setTap("edit");
+            }}
+          >
+            수정
           </button>
         </>
       ) : (
