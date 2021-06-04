@@ -1,5 +1,5 @@
 import { atom, selector } from "recoil";
-import { getAllData } from "../data/PhoneData";
+import { getAllData } from "./PhoneData";
 import { IPhoneData } from "../types/type";
 
 export const selectedDataState = atom<IPhoneData | null>({

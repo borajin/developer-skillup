@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import {
   addPhoneData,
   getAllData,
   editPhoneData,
   findPhoneData
-} from "../data/PhoneData";
+} from "../store/PhoneData";
 import {
   tapState,
   searchInputState,

@@ -1,9 +1,5 @@
 import { IPhoneData } from "../types/type";
 
-export const getAllData = () => {
-  return PhoneData;
-};
-
 let PhoneData: IPhoneData[] = [
   {
     id: 1,
@@ -78,6 +74,10 @@ const createId = () => {
     id = id + 1;
     return id;
   }
+};
+
+export const getAllData = () => {
+  return PhoneData;
 };
 
 export const addPhoneData = (name: string, birth: string, etc: string) => {
