@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBox from "../components/SerachBox";
 import ContactList from "../components/ContactList";
-import Add from "../components/Add";
+import AddTAp from "../components/AddTap";
 import Details from "../components/Details";
 import { useRecoilValue } from "recoil";
 import { addTapState } from "../store/atom";
@@ -17,7 +17,7 @@ const Home = ({ Component, pageProps }) => {
           <SearchBox />
           <ContactList />
         </div>
-        <div className="col right">{addTap ? <Add /> : <Details />}</div>
+        <div className="col right">{addTap ? <AddTap /> : <Details />}</div>
       </div>
     </div>
   );

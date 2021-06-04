@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import Profile from "./Profile";
 import { useSetRecoilState } from "recoil";
-import { selectedDataState } from "../atoms/atom";
+import { selectedDataState } from "../store/atom";
 import { IPhoneData } from "../types/type";
 
 interface DataProps {

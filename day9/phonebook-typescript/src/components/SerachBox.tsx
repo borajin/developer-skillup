@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { useRecoilState, useResetRecoilState, useRecoilValue } from "recoil";
-import { selectedDataState, searchInputState } from "../atoms/atom";
+import { selectedDataState, searchInputState } from "../store/atom";
 
 const SearchBox = memo(() => {
   const [searchInput, setSearchInput] =

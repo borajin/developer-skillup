@@ -3,7 +3,7 @@ import { useSetRecoilState } from "recoil";
 import { addPhoneData, getAllData } from "../data/PhoneData";
 import { searchInputState, searchListState } from "../store/atom";
 
-const Add = () => {
+const AddTap = () => {
   const setSearchList = useSetRecoilState(searchListState);
   const setSearchInput = useSetRecoilState(searchInputState);
 
@@ -51,4 +51,4 @@ const Add = () => {
   );
 };
 
-export default Add;
+export default AddTap;

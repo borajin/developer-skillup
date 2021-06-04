@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { useRecoilValue } from "recoil";
-import { selectedDataState } from "../atoms/atom";
+import { selectedDataState } from "../store/atom";
 import { IPhoneData } from "../types/type";
 import Profile from "./Profile";
 
