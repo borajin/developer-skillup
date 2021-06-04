@@ -1,7 +1,7 @@
 import React from "react";
 import Profile from "./Profile";
 
-function Details({ selectedData }) {
+function Detail({ selectedData }) {
   return (
     <div className="details">
       {selectedData ? (
@@ -23,4 +23,4 @@ function Details({ selectedData }) {
   );
 }
 
-export default Details;
+export default Detail;

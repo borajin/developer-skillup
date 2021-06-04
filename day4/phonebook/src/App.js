@@ -3,7 +3,7 @@ import "./App.css";
 import { PhoneData } from "./data/PhoneData.json";
 import SearchBox from "./components/SerachBox";
 import ContactList from "./components/ContactList";
-import Details from "./components/Details";
+import Details from "./components/Detail";
 
 function App() {
   const [selectedData, setSelectedData] = useState();
@@ -12,7 +12,7 @@ function App() {
   const onInputChange = (e) => {
     const input = e.target.value;
 
-    setSelectedData();
+    setSelectedData(); 
     setSearch({ input, data: searchContact(input) });
   };
 

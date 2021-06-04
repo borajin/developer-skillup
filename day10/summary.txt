@@ -1,0 +1,41 @@
+클라이언트 사이드 랜더링(React)
+1. html 파일을 다운받는다
+2. 빈화면! [사용자가 보는 시점]
+3. api 호출해 데이터를 채운다.
+4. js 코드가 돌면서 화면을 그린다 (화면이 깜빡임..)
+
+서버 사이드 랜더링(Next.js - react 에 서버 사이드 렌더링을 제공하는 프레임워크)
+1. html 파일을 다운받는다
+2. api 호출하여 데이터를 채운다.
+2. js 코드가 돌면서 화면을 그린다
+3. 완성된 화면! [사용자가 보는 시점]
+
+
+
+1. 프로젝트 생성 : npx create-next-app my-app
+2. 컴파일 : yarn dev
+3. pages 안의 index.js 가 시작점
+
+pages 파일은 경로로 찾아갈 수 있음. (라우팅이 됨)
+
+pages 에다가는 component 나 다른 폴더를 생성하면 안됨. 라우트할 애들만 넣기.
+폴더는 상위폴더에다가 만들어서 불러오기
+
+recoil 은 store.
+type 은 types.
+
+** 데이터 가져오면 속도가 느려지므로 화면이 완성된 이후에 클라이언트 단에서 데이터를 가져오기로 한다.
+
+
+
+** 배포할 때
+json 파일 있는 곳을 base
+build command : next build
+publish : /.next
+
+netlify plugin 설치
+- plugin 탭에서 next.js casche, essential 어쩌고 검색해 둘다 설치
+
+
+
+- phonebook 에 next + 기능추가(추가/삭제/수정 등등)

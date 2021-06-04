@@ -1,10 +1,11 @@
 import React, { memo } from "react";
 import { useRecoilValue } from "recoil";
-import { selectedDataState, PhoneDataTypes } from "../atoms/atom";
+import { selectedDataState } from "../atoms/atom";
+import { IPhoneData } from "../types/type";
 import Profile from "./Profile";
 
 const Details = () => {
-  const selectedData = useRecoilValue<PhoneDataTypes | null>(selectedDataState);
+  const selectedData = useRecoilValue<IPhoneData | null>(selectedDataState);
 
   if (selectedData == null) {
     return <div className="emptyset">정보가 없습니다.</div>;

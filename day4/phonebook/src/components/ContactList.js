@@ -1,5 +1,5 @@
 import React from "react";
-import Profile from "./Profile";
+import Contact from "./Contact";
 
 function ContactList({ phoneData, onContactClick }) {
   return (
@@ -7,18 +7,7 @@ function ContactList({ phoneData, onContactClick }) {
       <ul>
         {phoneData.map((data) => (
           <li key={data.id}>
-            <button
-              type="button"
-              onClick={() => {
-                onContactClick(data);
-              }}
-            >
-              <Profile
-                profileImg={data.img}
-                profileName={data.name}
-                isDetail={false}
-              />
-            </button>
+            <Contact onContactClick={onContactClick} />
           </li>
         ))}
       </ul>
