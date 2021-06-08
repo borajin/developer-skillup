@@ -7,7 +7,7 @@ function ContactList({ phoneData, onContactClick }) {
       <ul>
         {phoneData.map((data) => (
           <li key={data.id}>
-            <Contact onContactClick={onContactClick} />
+            <Contact data={data} onContactClick={onContactClick} />
           </li>
         ))}
       </ul>
